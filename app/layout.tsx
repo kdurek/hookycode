@@ -1,0 +1,64 @@
+import type { Metadata, Viewport } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import './globals.css'
+import { Header } from './header'
+import { Footer } from './footer'
+import { ThemeProvider } from 'next-themes'
+import Script from 'next/script'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
+}
+
+export const metadata: Metadata = {
+  title: 'Krzysztof Durek | Hooky Code',
+  description: 'Tworzenie stron internetowych i aplikacji',
+}
+
+const geist = Geist({
+  variable: '--font-geist',
+  subsets: ['latin-ext'],
+})
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin-ext'],
+})
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          defer
+          src="https://analytics.hookycode.pl/script.js"
+          data-website-id="b8b964a5-44bc-4e39-802a-3d1444f409bb"
+        />
+      </head>
+      <body
+        className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+      >
+        <ThemeProvider
+          enableSystem={true}
+          attribute="class"
+          storageKey="theme"
+          defaultTheme="system"
+        >
+          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
+            <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </div>
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
