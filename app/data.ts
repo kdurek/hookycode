@@ -1,3 +1,5 @@
+import { icons } from '@/app/icons'
+
 export type Project = {
   name: string
   link: string
@@ -14,10 +16,13 @@ type WorkExperience = {
   link: string
 }
 
-type SocialLink = {
+type ContactLink = {
   label: string
   link: string
+  icon: React.ReactNode
 }
+
+export const EMAIL = 'kontakt@hookycode.pl'
 
 export const PROJECTS: Project[] = [
   {
@@ -54,15 +59,20 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
 ]
 
-export const SOCIAL_LINKS: SocialLink[] = [
+export const CONTACT_LINKS: ContactLink[] = [
   {
     label: 'Github',
+    icon: icons.github,
     link: 'https://github.com/kdurek',
   },
   {
     label: 'LinkedIn',
+    icon: icons.linkedin,
     link: 'https://www.linkedin.com/in/krzysztof-durek-73a166215',
   },
+  {
+    label: EMAIL,
+    icon: icons.mail,
+    link: `mailto:${EMAIL}`,
+  },
 ]
-
-export const EMAIL = 'kontakt@hookycode.pl'

@@ -1,38 +1,61 @@
-'use client'
-import { TextEffect } from '@/components/ui/text-effect'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-8 grid grid-cols-2 gap-4">
-      <div>
-        <Link href="/" className="font-medium text-black dark:text-white">
-          Krzysztof Durek
-        </Link>
-        <TextEffect
-          as="p"
-          preset="fade"
-          per="char"
-          className="text-zinc-600 dark:text-zinc-500"
-          delay={0.5}
-        >
-          Full Stack Developer
-        </TextEffect>
-      </div>
-      <div className="place-self-end">
-        <p className="text-end font-medium text-black dark:text-white">
-          Hooky Code
-        </p>
-        <TextEffect
-          as="p"
-          preset="fade"
-          per="char"
-          className="text-zinc-600 dark:text-zinc-500"
-          delay={0.5}
-        >
-          Strony Internetowe
-        </TextEffect>
-      </div>
+    <header className="absolute inset-x-0 top-0 z-50">
+      <nav className="flex items-center justify-center p-4 lg:justify-between lg:px-8">
+        <div className="flex lg:flex-1">
+          <Link
+            href="/"
+            className="sm:text-foreground relative flex items-center text-center text-2xl font-medium sm:text-xl"
+          >
+            Krzysztof Durek Hooky Code
+          </Link>
+        </div>
+        <div className="hidden lg:flex lg:gap-x-8">
+          <a
+            href="#projects"
+            className={cn(
+              buttonVariants({
+                variant: 'link',
+                className: 'text-foreground text-lg',
+              }),
+            )}
+          >
+            Projekty
+          </a>
+          <a
+            href="#experience"
+            className={cn(
+              buttonVariants({
+                variant: 'link',
+                className: 'text-foreground text-lg',
+              }),
+            )}
+          >
+            Doswiadczenie
+          </a>
+          <a
+            href="#contact"
+            className={cn(
+              buttonVariants({
+                variant: 'link',
+                className: 'text-foreground text-lg',
+              }),
+            )}
+          >
+            Kontakt
+          </a>
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#contact" className={buttonVariants()}>
+            Zatrudnij mnie <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
+      </nav>
     </header>
   )
 }

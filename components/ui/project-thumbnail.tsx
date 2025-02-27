@@ -1,8 +1,8 @@
 'use client'
+
 import type { Project } from '@/app/data'
 import Image from 'next/image'
 import { useRef } from 'react'
-import { cn } from '@/lib/utils'
 
 export const ProjectThumbnail = ({
   project,
@@ -57,8 +57,8 @@ export const ProjectThumbnail = ({
         hideVideo()
       }}
     >
-      <div className="relative overflow-hidden bg-zinc-50/40 ring-zinc-200/50 ring-inset group-hover:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.2)] dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-        <div className="relative aspect-[2/1] overflow-hidden rounded-2xl">
+      <div className="relative">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border">
           <Image
             src={project.thumbnail}
             alt={project.name}
@@ -92,7 +92,7 @@ export const ProjectThumbnail = ({
               preload="none"
               muted
               playsInline
-              className="absolute inset-0 h-full w-full object-cover [mask-image:radial-gradient(white,black)]"
+              className="absolute inset-0 size-full object-cover [mask-image:radial-gradient(white,black)]"
               onEnded={handleVideoEnd}
             />
           </div>
@@ -100,17 +100,15 @@ export const ProjectThumbnail = ({
       </div>
       <div className="px-1">
         <a
-          className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+          className="group relative inline-block text-xl font-medium"
           href={project.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           {project.name}
-          <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50"></span>
+          <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 transition-all duration-200 group-hover:max-w-full"></span>
         </a>
-        <p className="text-base text-zinc-600 dark:text-zinc-400">
-          {project.description}
-        </p>
+        <p className="text-muted-foreground text-lg">{project.description}</p>
       </div>
     </div>
   )
