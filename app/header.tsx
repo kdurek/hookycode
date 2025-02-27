@@ -36,7 +36,7 @@ export function Header() {
               }),
             )}
           >
-            Doswiadczenie
+            Doświadczenie
           </a>
           <a
             href="#contact"
