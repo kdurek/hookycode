@@ -3,14 +3,14 @@
 @plugin 'tailwindcss-animate';
 
 :root {
-  --background: oklch(25.42% 0.0371 216.08);
+  --background: oklch(12.72% 0.0314 155.06);
   --foreground: oklch(90.37% 0 0);
-  --card: oklch(25.42% 0.0371 216.08);
+  --card: oklch(12.72% 0.0314 155.06);
   --card-foreground: oklch(90.37% 0 0);
-  --popover: oklch(25.42% 0.0371 216.08);
+  --popover: oklch(12.72% 0.0314 155.06);
   --popover-foreground: oklch(90.37% 0 0);
   --primary: oklch(93.59% 0.1025 151.02);
-  --primary-foreground: oklch(25.42% 0.0371 216.08);
+  --primary-foreground: oklch(12.72% 0.0314 155.06);
   --secondary: oklch(93.59% 0.1025 151.02 / 5%);
   --secondary-foreground: oklch(93.59% 0.1025 151.02);
   --muted: oklch(93.59% 0.1025 151.02 / 5%);
@@ -28,10 +28,10 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  --sidebar: oklch(25.42% 0.0371 216.08);
+  --sidebar: oklch(12.72% 0.0314 155.06);
   --sidebar-foreground: oklch(90.37% 0 0);
   --sidebar-primary: oklch(93.59% 0.1025 151.02);
-  --sidebar-primary-foreground: oklch(25.42% 0.0371 216.08);
+  --sidebar-primary-foreground: oklch(12.72% 0.0314 155.06);
   --sidebar-accent: oklch(93.59% 0.1025 151.02 / 5%);
   --sidebar-accent-foreground: oklch(93.59% 0.1025 151.02 / 20%);
   --sidebar-border: oklch(93.59% 0.1025 151.02 / 20%);
