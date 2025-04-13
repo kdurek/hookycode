@@ -35,6 +35,10 @@ export default function RootLayout({
     <html lang="pl" suppressHydrationWarning>
       <head>
         <Script
+          src={process.env.NEXT_PUBLIC_COOKIE_YES_URL}
+          strategy="beforeInteractive"
+        />
+        <Script
           defer
           src={process.env.NEXT_PUBLIC_UMAMI_URL}
           data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
