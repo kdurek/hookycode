@@ -6,8 +6,8 @@ import Link from 'next/link'
 export function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <nav className="flex items-center justify-center p-4 lg:justify-between lg:px-8">
-        <div className="flex lg:flex-1">
+      <nav className="container flex items-center justify-center p-4 lg:justify-between lg:px-8">
+        <div className="flex">
           <Link
             href="/"
             className="sm:text-foreground relative flex items-center text-center text-2xl font-medium sm:text-xl"
@@ -50,7 +50,7 @@ export function Header() {
             Kontakt
           </a>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:justify-end">
           <a href="#contact" className={buttonVariants()}>
             Zatrudnij mnie <ArrowRight className="h-4 w-4" />
           </a>
