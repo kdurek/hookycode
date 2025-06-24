@@ -45,11 +45,12 @@ export const NAV_LINKS: NavLink[] = [
 
 export const PROJECTS: Project[] = [
   {
-    name: 'POP-MEDIA',
-    link: 'https://pop-media.pl',
-    thumbnail: '/assets/projects/popmedia.webp',
-    video: '/assets/projects/popmedia.mp4',
-    description: 'Strona internetowa dla producenta i montażysty wideo',
+    name: 'Ampa Park',
+    link: 'https://ampapark.pl',
+    thumbnail: '/assets/projects/ampapark.webp',
+    video: '/assets/projects/ampapark.mp4',
+    description:
+      'Stworzyłem stronę dla parku rozrywki Ampa Park, która ułatwia rodzicom znalezienie atrakcji i szybki zakup biletów online. Strona jest przystosowana do obsługi wielu lokalizacji, co pozwala na łatwe zarządzanie informacjami o każdym oddziale i efektywne przyciąganie klientów, zwiększając ich zaangażowanie.',
   },
   {
     name: 'Klinck',
@@ -57,7 +58,23 @@ export const PROJECTS: Project[] = [
     thumbnail: '/assets/projects/klinck.webp',
     video: '/assets/projects/klinck.mp4',
     description:
-      'Strona internetowa dla firmy zajmującej się instalacją klimatyzacji',
+      'Zaprojektowałem nowoczesną i przejrzystą stronę dla Klinck Klimatyzacje, która skutecznie pozyskuje nowych klientów. Dzięki prostemu układowi i wyraźnym informacjom o usługach (w tym o bezpłatnym kosztorysie), strona buduje zaufanie i zachęca do kontaktu, usprawniając proces zdobywania zleceń.',
+  },
+  {
+    name: 'POP-MEDIA',
+    link: 'https://pop-media.pl',
+    thumbnail: '/assets/projects/popmedia.webp',
+    video: '/assets/projects/popmedia.mp4',
+    description:
+      'Stworzyłem profesjonalną stronę dla POP-MEDIA, skutecznie prezentującą ich usługi produkcji i montażu filmów. Nowoczesny design z ciemnym tłem podkreśla wizualny charakter branży. Strona jasno przedstawia różnorodność oferowanych formatów i jest dostępna w wielu językach, docierając do szerszej grupy klientów.',
+  },
+  {
+    name: 'Izabela Gajek',
+    link: 'https://igajek.pl',
+    thumbnail: '/assets/projects/igajek.webp',
+    video: '/assets/projects/igajek.mp4',
+    description:
+      'Zaprojektowałem stronę dla Izabeli Gajek, trenerki personalnej i medycznej, skutecznie budując jej markę i zaufanie. Przejrzysta strona zawiera osobistą historię, która pomaga klientom poczuć więź. Jasno przedstawia plany treningowe z cenami i referencje, ułatwiając potencjalnym klientom podjęcie decyzji i umówienie konsultacji.',
   },
 ]
 

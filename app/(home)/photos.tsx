@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
-export function ProjectsPhotos() {
+export function Photos() {
   const rotations = [
     'rotate-2',
     '-rotate-2',
@@ -13,11 +13,11 @@ export function ProjectsPhotos() {
   return (
     <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
       {[
-        '/assets/projects/klinck.webp',
         '/assets/projects/popmedia.webp',
         '/assets/projects/klinck.webp',
+        '/assets/projects/igajek.webp',
+        '/assets/projects/ampapark.webp',
         '/assets/projects/popmedia.webp',
-        '/assets/projects/klinck.webp',
       ].map((image, imageIndex) => (
         <Link
           key={imageIndex}
