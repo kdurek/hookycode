@@ -45,7 +45,7 @@ export function Contact() {
               name="name"
               defaultValue={state?.inputs?.name}
               aria-describedby="name-error"
-              className={cn(state?.errors?.name ? 'border-red-500' : '')}
+              className={cn(state?.errors?.name ? 'border-destructive' : '')}
             />
             {state?.errors?.name && (
               <Label id="name-error" className="text-destructive">
@@ -66,7 +66,7 @@ export function Contact() {
               name="email"
               defaultValue={state?.inputs?.email}
               aria-describedby="email-error"
-              className={cn(state?.errors?.email ? 'border-red-500' : '')}
+              className={cn(state?.errors?.email ? 'border-destructive' : '')}
             />
             {state?.errors?.email && (
               <Label id="email-error" className="text-destructive">
@@ -89,7 +89,7 @@ export function Contact() {
               aria-describedby="message-error"
               className={cn(
                 'h-24',
-                state?.errors?.message ? 'border-red-500' : '',
+                state?.errors?.message ? 'border-destructive' : '',
               )}
             />
             {state?.errors?.message && (

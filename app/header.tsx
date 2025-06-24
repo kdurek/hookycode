@@ -26,7 +26,7 @@ function MobileNavigation() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger className="bg-muted/90 shadow-muted/5 pointer-events-auto flex items-center rounded-full px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-white/10 backdrop-blur hover:ring-white/20 md:hidden">
+      <DialogTrigger className="bg-muted/90 shadow-muted/5 ring-muted/10 hover:ring-muted/20 pointer-events-auto flex items-center rounded-full px-4 py-2 text-sm font-medium shadow-lg ring-1 backdrop-blur md:hidden">
         Menu
         <ChevronDownIcon className="stroke-muted-foreground ml-2 size-4" />
       </DialogTrigger>
@@ -62,7 +62,7 @@ function DesktopNavigation(props: React.HTMLAttributes<HTMLDivElement>) {
 
   return (
     <nav {...props}>
-      <ul className="bg-muted/90 shadow-muted/5 pointer-events-auto hidden rounded-full px-3 text-sm font-medium shadow-lg ring-1 ring-white/10 backdrop-blur md:flex">
+      <ul className="bg-muted/90 shadow-muted/5 ring-muted/10 pointer-events-auto hidden rounded-full px-3 text-sm font-medium shadow-lg ring-1 backdrop-blur md:flex">
         {NAV_LINKS.map((link) => (
           <li key={link.href}>
             <Link
@@ -198,7 +198,7 @@ export function Header() {
       <div
         className={clsx(
           className,
-          'bg-muted/90 shadow-muted/5 h-10 w-10 rounded-full p-0.5 shadow-lg ring-1 ring-white/10 backdrop-blur',
+          'bg-muted/90 shadow-muted/5 ring-muted/10 h-10 w-10 rounded-full p-0.5 shadow-lg ring-1 backdrop-blur',
         )}
         {...props}
       />

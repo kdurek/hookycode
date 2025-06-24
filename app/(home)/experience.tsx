@@ -19,7 +19,7 @@ export function Experience() {
               href={job.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-muted/50 bg-muted shadow-muted/5 ring-muted-foreground/5 relative mt-1 flex size-10 flex-none items-center justify-center rounded-full border shadow-md"
+              className="border-muted-foreground/10 bg-muted shadow-muted/5 ring-muted-foreground/5 relative mt-1 flex size-10 flex-none items-center justify-center rounded-full border shadow-md"
             >
               <Image
                 src={job.logo}
