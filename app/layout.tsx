@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import Script from 'next/script'
+import './globals.css'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 const geist = Geist({
-  variable: '--font-geist',
+  variable: '--font-geist-sans',
   subsets: ['latin-ext'],
 })
 
@@ -44,14 +44,10 @@ export default function RootLayout({
           data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
         />
       </head>
-      <body
-        className={`${geist.variable} ${geistMono.variable} tracking-tight antialiased`}
-      >
-        <div className="font-[family-name:var(--font-inter-tight)]">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   )

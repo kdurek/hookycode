@@ -1,6 +1,7 @@
 'use client'
 
-import type { Project } from '@/app/data'
+import type { Project } from '@/lib/constants'
+import { Link } from 'lucide-react'
 import Image from 'next/image'
 import { useRef } from 'react'
 
@@ -57,8 +58,8 @@ export const ProjectThumbnail = ({
         hideVideo()
       }}
     >
-      <div className="relative">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border">
+      <div className="group relative">
+        <div className="relative z-10 aspect-[16/9] overflow-hidden rounded-md">
           <Image
             src={project.thumbnail}
             alt={project.name}
@@ -92,24 +93,38 @@ export const ProjectThumbnail = ({
               preload="none"
               muted
               playsInline
-              className="absolute inset-0 size-full object-cover [mask-image:radial-gradient(white,black)]"
+              className="absolute inset-0 size-full [mask-image:radial-gradient(white,black)] object-cover"
               onEnded={handleVideoEnd}
             />
           </div>
         </div>
       </div>
-      <div className="px-1">
+      <h2 className="mt-6">
+        <div className="bg-muted/50 absolute -inset-x-4 -inset-y-6 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl" />
         <a
-          className="group relative inline-block text-xl font-medium"
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
+          className="pointer-coarse:pointer-events-none"
         >
-          {project.name}
-          <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 transition-all duration-200 group-hover:max-w-full"></span>
+          <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+          <span className="relative z-10">{project.name}</span>
         </a>
-        <p className="text-muted-foreground text-lg">{project.description}</p>
-      </div>
+      </h2>
+      <p className="text-muted-foreground relative z-10 mt-2 text-sm">
+        {project.description}
+      </p>
+      <p className="group-hover:text-primary relative z-10 mt-6 flex items-center text-sm font-medium transition">
+        <Link className="size-4 flex-none" />
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-2 pointer-fine:pointer-events-none"
+        >
+          {project.link.replace('https://', '')}
+        </a>
+      </p>
     </div>
   )
 }
