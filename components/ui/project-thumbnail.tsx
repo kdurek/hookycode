@@ -1,6 +1,6 @@
 'use client'
 
-import type { Project } from '@/lib/constants'
+import type { Project } from '@/lib/data'
 import { Link } from 'lucide-react'
 import Image from 'next/image'
 import { useRef } from 'react'

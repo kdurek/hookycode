@@ -1,4 +1,4 @@
-import { PROJECTS } from '@/lib/constants'
+import { PROJECTS } from '@/lib/data'
 import { ProjectThumbnail } from '@/components/ui/project-thumbnail'
 import { Hero } from '@/app/(home)/hero'
 

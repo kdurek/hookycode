@@ -1,4 +1,4 @@
-import { WORK_EXPERIENCE } from '@/lib/constants'
+import { EXPERIENCE } from '@/lib/data'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ArrowDownIcon, BriefcaseIcon } from 'lucide-react'
@@ -13,7 +13,7 @@ export function Experience() {
         <span className="ml-3">Doświadczenie</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {WORK_EXPERIENCE.map((job, jobIndex) => (
+        {EXPERIENCE.map((job, jobIndex) => (
           <li key={jobIndex} className="flex gap-4">
             <a
               href={job.link}
