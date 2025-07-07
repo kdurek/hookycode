@@ -37,7 +37,7 @@ const OFFER_ITEMS = [
   {
     title: 'Brak WordPressa - Większa wydajność i bezpieczeństwo',
     description:
-      'Nie tworzymy stron na WordPressie. Stawiamy na indywidualne rozwiązania, które zapewniają szybsze działanie, większe bezpieczeństwo (mniej podatności na ataki) oraz pełną kontrolę nad kodem, bez zbędnych wtyczek i obciążeń.',
+      'Nie tworzę stron na WordPressie. Stawiam na indywidualne rozwiązania, które zapewniają szybsze działanie, większe bezpieczeństwo (mniej podatności na ataki) oraz pełną kontrolę nad kodem, bez zbędnych wtyczek i obciążeń.',
   },
 ]
 

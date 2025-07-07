@@ -90,7 +90,7 @@ export const USES: Use[] = [
       },
       {
         title: 'Synology DS220+',
-        description: 'NAS do przechowywania danych',
+        description: 'Serwer NAS do przechowywania danych i backupów',
       },
       {
         title: 'DELL Wyse 5070 (J5005)',
@@ -98,16 +98,15 @@ export const USES: Use[] = [
       },
       {
         title: 'Green Cell UPS (600VA/360W)',
-        description:
-          'UPS do zasilania serwerów w home labie w razie awarii prądu',
+        description: 'Zasilacz awaryjny do NASa i serwera w home labie',
       },
       {
         title: 'Monitor Gigabyte 34" G34WQC (3440x1440, 144Hz)',
-        description: 'Monitor',
+        description: 'Monitor ultrapanoramiczny',
       },
       {
         title: 'Logitech MX Master 3',
-        description: 'Mysz bezprzewodowa',
+        description: 'Mysz bezprzewodowa z dodatkowymi przyciskami',
       },
       {
         title: 'Keychron K3 Pro H3',
@@ -137,20 +136,20 @@ export const USES: Use[] = [
       },
       {
         title: 'Obsidian',
-        description: 'Baza wiedzy',
+        description: 'Zarządzanie notatkami i bazą wiedzy',
       },
       {
         title: 'Raycast',
-        description: 'Alternatywa dla Spotlight',
+        description:
+          'Alternatywa dla Spotlight, szybkie uruchamianie aplikacji i wyszukiwanie plików',
       },
       {
         title: '1Password',
-        description:
-          'Zarządzanie hasłami i danymi logowania do stron i aplikacji',
+        description: 'Zarządzanie hasłami i danymi logowania',
       },
       {
         title: 'iTerm2',
-        description: 'Terminal',
+        description: 'Terminal z dodatkowymi funkcjami',
       },
       {
         title: 'Shottr',
@@ -166,25 +165,24 @@ export const USES: Use[] = [
       },
       {
         title: 'Rectangle Pro',
-        description: 'Zarządzanie oknami',
+        description: 'Zarządzanie oknami aplikacji',
       },
       {
         title: 'LinearMouse',
-        description:
-          'Konfiguracja myszy, głównie używana do wyłączenia akceleracji sprzętowej',
+        description: 'Zarządzanie przyciskami myszy i gestami na Macu',
       },
       {
         title: 'Synology Drive',
-        description: 'Dysk w chmurze z danymi lokalnie',
+        description: 'Synchronizacja plików z NASem',
       },
       {
         title: 'Synology Photos',
         description:
-          'Zarządzanie zdjęciami i filmami, backup z telefonów do NAS',
+          'Zarządzanie zdjęciami i filmami z NASa, z automatycznym tworzeniem kopii zapasowych',
       },
       {
         title: 'RustDesk',
-        description: 'Zdalne sterowanie urządzeniami',
+        description: 'Zdalny dostęp do urządzeń',
       },
       {
         title: 'KDE Connect',
@@ -197,11 +195,11 @@ export const USES: Use[] = [
     items: [
       {
         title: 'Homebrew',
-        description: 'Menadżer paczek',
+        description: 'Zarządzanie pakietami',
       },
       {
         title: 'Zoxide',
-        description: 'Pozwala przeskakiwać pomiędzy ścieżkami',
+        description: 'Szybkie przechodzenie do katalogów',
       },
       {
         title: 'Fish shell',
@@ -226,20 +224,28 @@ export const USES: Use[] = [
     name: 'Self-Hosted',
     items: [
       {
+        title: 'Proxmox Virtual Environment',
+        description: 'Wirtualizacja serwerów i kontenerów',
+      },
+      {
+        title: 'Proxmox Backup Server',
+        description: 'Backup maszyn wirtualnych i kontenerów',
+      },
+      {
         title: 'Adguard Home',
         description: 'DNS do blokowania reklam i innych niechcianych treści',
       },
       {
         title: 'Traefik',
-        description: 'Reverse proxy',
+        description: 'Reverse proxy i load balancer',
       },
       {
         title: 'Cloudflared',
-        description: 'DNS i proxy',
+        description: 'Połączenie z Cloudflare Tunnel',
       },
       {
         title: 'Watch Your Lan',
-        description: 'Monitorowanie sieci LAN',
+        description: 'Monitorowanie urządzeń w sieci lokalnej',
       },
       {
         title: 'Watchtower',
@@ -247,7 +253,7 @@ export const USES: Use[] = [
       },
       {
         title: 'Homepage',
-        description: 'Dashboard z szybkim dostępem do aplikacji',
+        description: 'Strona startowa z linkami do aplikacji',
       },
       {
         title: 'Paperless-ngx',
@@ -263,27 +269,27 @@ export const USES: Use[] = [
       },
       {
         title: 'MinIO',
-        description: 'Kompatybilny z S3 API',
+        description: 'Alternatywa dla Amazon S3',
       },
       {
         title: 'n8n',
-        description: 'Automatyzacja zadań',
+        description: 'Automatyzacja procesów',
       },
       {
         title: 'git-sync',
-        description: 'Synchronizacja repozytoriów z GitHub',
+        description: 'Synchronizacja repozytoriów Git',
       },
       {
         title: 'it-tools',
-        description: 'Przydatne narzędzia dla developerów',
+        description: 'Przydatne narzędzia dla programistów',
       },
       {
         title: 'Coolify',
-        description: 'Zarządzanie aplikacjami na VPS',
+        description: 'Platforma do hostowania aplikacji',
       },
       {
         title: 'Stirling-PDF',
-        description: 'Narzędzia do edycji PDF',
+        description: 'Narzędzie do przetwarzania PDF',
       },
     ],
   },
