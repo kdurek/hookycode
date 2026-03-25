@@ -1,10 +1,10 @@
 {
-  "trailingComma": "all",
-  "semi": false,
-  "tabWidth": 2,
   "singleQuote": true,
-  "printWidth": 80,
-  "endOfLine": "auto",
-  "arrowParens": "always",
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "trailingComma": "all",
+  "printWidth": 100,
+  "semi": false,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/app/(frontend)/[locale]/globals.css",
+  "tailwindAttributes": ["imgClassName", "videoClassName"],
+  "tailwindFunctions": ["cn", "cva"]
 }

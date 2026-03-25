@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "title": "Hooky Code"
+  },
+  "pagination": {
+    "page": "Strona",
+    "previous": "Poprzedni",
+    "next": "Następny",
+    "morePages": "Więcej stron"
+  },
+  "home": {
+    "title": "Hooky Code"
+  },
+  "experience": {
+    "present": "Teraz"
+  },
+  "projects": {
+    "title": "Moje projekty",
+    "description": "Oto kilka przykładów moich ostatnich prac. Każda strona jest indywidualnym rozwiązaniem, dostosowanym do potrzeb klienta."
+  },
+  "notFound": {
+    "title": "404",
+    "description": "Ta strona nie została znaleziona.",
+    "goHome": "Wróć do strony głównej"
+  },
+  "cookieConsent": {
+    "message": "Używam plików cookie w celu zwiększenia komfortu przeglądania witryny.",
+    "accept": "Akceptuj",
+    "reject": "Odrzuć",
+    "acceptAriaLabel": "Zaakceptuj pliki cookie",
+    "rejectAriaLabel": "Odrzuć pliki cookie",
+    "bannerAriaLabel": "Zgoda na pliki cookie"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "title": "Hooky Code"
+  },
+  "pagination": {
+    "page": "Page",
+    "previous": "Previous",
+    "next": "Next",
+    "morePages": "More pages"
+  },
+  "home": {
+    "title": "Hooky Code"
+  },
+  "experience": {
+    "present": "Present"
+  },
+  "projects": {
+    "title": "My projects",
+    "description": "Here are some of my recent projects. Each website is an individual solution tailored to the client needs."
+  },
+  "notFound": {
+    "title": "404",
+    "description": "This page could not be found.",
+    "goHome": "Go home"
+  },
+  "cookieConsent": {
+    "message": "I use cookies to enhance your browsing experience.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "acceptAriaLabel": "Accept cookies",
+    "rejectAriaLabel": "Reject cookies",
+    "bannerAriaLabel": "Cookie consent"
+  }
+}

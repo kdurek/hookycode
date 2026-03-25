@@ -1,0 +1,31 @@
+services:
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 3000:3000
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - mongo
+  #   volumes:
+  #     - ./.docker/media:/app/media
+  #     - ./.docker/files:/app/files
+  #   networks:
+  #     - hookycode
+  #   env_file:
+  #     - .env
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    command:
+      - --storageEngine=wiredTiger
+    volumes:
+      - .docker/mongo:/data/db
+    logging:
+      driver: none
+    # networks:
+    #   - hookycode
+# networks:
+#   hookycode:
