@@ -26,7 +26,7 @@ export const VideoMedia: React.FC<MediaProps> = (props) => {
         autoPlay={autoPlay}
         ref={videoRef}
       >
-        <source src={getMediaUrl(`/media/${filename}`)} />
+        <source src={getMediaUrl(`/api/media/file/${filename}`)} />
       </video>
     )
   }
