@@ -11,7 +11,7 @@ export const VideoMedia: React.FC<MediaProps> = (props) => {
   const { onClick, onEnded, preload, autoPlay = true, resource, videoRef, videoClassName } = props
 
   if (resource && typeof resource === 'object') {
-    const { filename } = resource
+    const { url } = resource
 
     return (
       <video
@@ -26,7 +26,7 @@ export const VideoMedia: React.FC<MediaProps> = (props) => {
         autoPlay={autoPlay}
         ref={videoRef}
       >
-        <source src={getMediaUrl(`/api/media/file/${filename}`)} />
+        <source src={getMediaUrl(url)} />
       </video>
     )
   }
