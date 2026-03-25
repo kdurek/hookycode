@@ -20,7 +20,7 @@ RUN corepack enable pnpm && pnpm build
 
 # Production
 FROM base AS runner
-RUN apk add --no-cache curl
+RUN apk add --no-cache wget
 WORKDIR /app
 
 ENV NODE_ENV=production
