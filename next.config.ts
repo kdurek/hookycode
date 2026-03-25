@@ -15,6 +15,7 @@ const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://loc
 const nextConfig: NextConfig = {
   output: 'standalone',
   images: {
+    dangerouslyAllowLocalIP: process.env.NODE_ENV !== 'production',
     qualities: [100],
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL].map((item) => {
