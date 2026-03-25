@@ -90,8 +90,4 @@ export const Experience: Block = {
       },
     }),
   ],
-  labels: {
-    plural: 'Experience blocks',
-    singular: 'Experience block',
-  },
 }

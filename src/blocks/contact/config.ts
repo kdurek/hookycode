@@ -18,8 +18,4 @@ export const Contact: Block = {
     },
     link({ appearances: false }),
   ],
-  labels: {
-    plural: 'Contact blocks',
-    singular: 'Contact block',
-  },
 }
