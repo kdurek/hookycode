@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Project } from '@/payload-types'
-import { ProjectThumbnail } from '@/components/project/thumbnail'
+import { ProjectCard } from '@/components/project/card'
 
 export type Props = {
   docs: Project[]
@@ -17,7 +17,7 @@ export const ProjectList: React.FC<Props> = ({ docs }) => {
       {docs?.map((doc, index) => {
         if (typeof doc === 'object' && doc !== null) {
           return (
-            <ProjectThumbnail key={doc.slug} doc={doc} relationTo="projects" priority={index < 8} />
+            <ProjectCard key={doc.slug} doc={doc} relationTo="projects" priority={index < 8} />
           )
         }
 
