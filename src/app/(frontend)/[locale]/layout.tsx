@@ -15,6 +15,7 @@ import { CookieConsentProvider } from '@/components/cookie-consent'
 import { setDefaultOptions, type Locale } from 'date-fns'
 import { pl, enGB } from 'date-fns/locale'
 import { setRequestLocale } from 'next-intl/server'
+import Script from 'next/script'
 
 import './globals.css'
 
@@ -45,6 +46,13 @@ export default async function RootLayout({
 
   return (
     <html className={geist.className} lang={locale} suppressHydrationWarning>
+      <head>
+        <Script
+          defer
+          src={process.env.NEXT_PUBLIC_UMAMI_URL}
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
+        />
+      </head>
       <body>
         <NextIntlClientProvider>
           <CookieConsentProvider>
