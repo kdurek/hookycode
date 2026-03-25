@@ -1,17 +1,17 @@
 import type { UsesBlock as UsesBlockProps } from '@/payload-types'
 
-function Item({ title, description }: { title: string; description: string }) {
-  const isExternalHref = description.startsWith('http://') || description.startsWith('https://')
+function Item({ title, description }: { title: string; description?: string | null }) {
+  const isExternalHref = description?.startsWith('http://') || description?.startsWith('https://')
 
   return (
     <li className="group relative flex flex-col items-start">
       <h3 className="text-base font-semibold tracking-tight">{title}</h3>
-      {!isExternalHref && (
+      {description && !isExternalHref && (
         <p className="relative z-10 mt-2 text-sm whitespace-pre-wrap text-muted-foreground">
           {description}
         </p>
       )}
-      {isExternalHref && (
+      {description && isExternalHref && (
         <a
           href={description}
           target="_blank"

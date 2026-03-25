@@ -28,7 +28,6 @@ export const Uses: Block = {
               name: 'description',
               type: 'textarea',
               localized: true,
-              required: true,
             },
           ],
         },

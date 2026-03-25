@@ -475,7 +475,7 @@ export interface UsesBlock {
     | {
         item: {
           title: string;
-          description: string;
+          description?: string | null;
         };
         id?: string | null;
       }[]
