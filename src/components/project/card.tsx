@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import { LinkIcon } from 'lucide-react'
 import type { Project } from '@/payload-types'
