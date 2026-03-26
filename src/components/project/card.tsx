@@ -2,7 +2,7 @@ import React from 'react'
 import { LinkIcon } from 'lucide-react'
 import type { Project } from '@/payload-types'
 import { CMSLink } from '@/components/link'
-import { ProjectThumbnail } from '@/components/project/thumbnail'
+import { ProjectThumbnail, ProjectThumbnailMedia } from '@/components/project/thumbnail'
 
 export const ProjectCard: React.FC<{
   doc: Project
@@ -14,9 +14,9 @@ export const ProjectCard: React.FC<{
   const href = `/${relationTo}/${slug}`
 
   return (
-    <div className="group relative space-y-2">
+    <ProjectThumbnail className="group relative space-y-2">
       <div className="group relative">
-        <ProjectThumbnail
+        <ProjectThumbnailMedia
           thumbnail={thumbnail}
           video={video}
           priority={priority}
@@ -36,6 +36,6 @@ export const ProjectCard: React.FC<{
         <LinkIcon className="size-4 flex-none" />
         <CMSLink className="ml-2 pointer-fine:pointer-events-none" {...link} />
       </p>
-    </div>
+    </ProjectThumbnail>
   )
 }
