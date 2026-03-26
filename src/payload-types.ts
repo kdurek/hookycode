@@ -427,6 +427,7 @@ export interface ContactBlock {
  * via the `definition` "ProjectShowcaseBlock".
  */
 export interface ProjectShowcaseBlock {
+  projects: (string | Project)[];
   id?: string | null;
   blockName?: string | null;
   blockType: 'projectShowcase';
@@ -812,6 +813,7 @@ export interface ContactBlockSelect<T extends boolean = true> {
  * via the `definition` "ProjectShowcaseBlock_select".
  */
 export interface ProjectShowcaseBlockSelect<T extends boolean = true> {
+  projects?: T;
   id?: T;
   blockName?: T;
 }
