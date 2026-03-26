@@ -21,7 +21,6 @@ export const revalidateProject: CollectionAfterChangeHook<Project> = async ({ do
     )
   }
   revalidateTag('projects', 'max')
-  revalidateTag('projects-sitemap', 'max')
 
   return doc
 }
@@ -44,7 +43,6 @@ export const revalidateDelete: CollectionAfterDeleteHook<Project> = async ({ doc
     )
   }
   revalidateTag('projects', 'max')
-  revalidateTag('projects-sitemap', 'max')
 
   return doc
 }

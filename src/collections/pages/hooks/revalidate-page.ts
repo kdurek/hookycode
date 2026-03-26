@@ -19,7 +19,6 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = async ({ doc }) =
     await Promise.all(Object.values(page.slug).map((slug) => revalidateTag(`page-${slug}`, 'max')))
   }
   revalidateTag('pages', 'max')
-  revalidateTag('pages-sitemap', 'max')
 
   return doc
 }
@@ -40,7 +39,6 @@ export const revalidateDelete: CollectionAfterDeleteHook<Page> = async ({ doc })
     await Promise.all(Object.values(page.slug).map((slug) => revalidateTag(`page-${slug}`, 'max')))
   }
   revalidateTag('pages', 'max')
-  revalidateTag('pages-sitemap', 'max')
 
   return doc
 }

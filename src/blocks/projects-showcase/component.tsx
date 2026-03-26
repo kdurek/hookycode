@@ -22,15 +22,13 @@ async function getShowcaseProjects(ids: string[], locale: TypedLocale): Promise<
     },
   })
 
-  return result.docs as Project[]
+  return result.docs
 }
 
 const getCachedShowcaseProjects = (ids: string[], locale: TypedLocale) =>
-  unstable_cache(
-    () => getShowcaseProjects(ids, locale),
-    ['showcase-projects', ...ids, locale],
-    { tags: ['projects'] },
-  )
+  unstable_cache(() => getShowcaseProjects(ids, locale), ['showcase-projects', ...ids, locale], {
+    tags: ['projects'],
+  })
 
 export const ProjectShowcaseBlock: React.FC<
   ProjectShowcaseBlockProps & { locale: TypedLocale }

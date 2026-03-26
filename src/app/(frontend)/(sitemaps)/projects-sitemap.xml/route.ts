@@ -67,7 +67,7 @@ const getProjectsSitemap = unstable_cache(
     return [archiveEntry, ...projectEntries]
   },
   ['projects-sitemap'],
-  { tags: ['projects-sitemap'] },
+  { tags: ['projects'] },
 )
 
 export async function GET() {
