@@ -10,11 +10,18 @@ import { notFound } from 'next/navigation'
 import { unstable_cache } from 'next/cache'
 import { ProjectTemplate } from '@/components/project/template'
 import { RenderHero } from '@/heros/render-hero'
+import { hasLocale } from 'next-intl'
+import { routing } from '@/i18n/routing'
 
-export async function generateStaticParams() {
+export async function generateStaticParams({ params: { locale } }: { params: { locale: string } }) {
+  if (!hasLocale(routing.locales, locale)) {
+    return []
+  }
+
   const payload = await getPayload({ config: configPromise })
   const projects = await payload.find({
     collection: 'projects',
+    locale,
     limit: 1000,
     overrideAccess: false,
     pagination: false,
