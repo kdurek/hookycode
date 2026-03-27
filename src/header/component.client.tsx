@@ -49,7 +49,7 @@ function MobileNavigation({ navItems }: { navItems: Header['navItems'] }) {
         </DialogHeader>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-muted-foreground/5">
-            {navItems?.map(({ link }, i) => {
+            {navItems?.map(({ link }) => {
               const href =
                 link.type === 'reference' &&
                 typeof link.reference?.value === 'object' &&
@@ -63,7 +63,7 @@ function MobileNavigation({ navItems }: { navItems: Header['navItems'] }) {
                 href === '/' ? pathname === href : href && pathname?.startsWith(href)
 
               return (
-                <li key={i}>
+                <li key={href}>
                   <CMSLink className={cn('block py-2', isActive && 'text-primary')} {...link} />
                 </li>
               )
@@ -82,7 +82,7 @@ function DesktopNavigation({ navItems }: { navItems: Header['navItems'] }) {
   return (
     <nav>
       <ul className="pointer-events-auto hidden rounded-full bg-muted/90 px-3 text-sm font-medium shadow-lg ring-1 shadow-muted/5 ring-muted/10 backdrop-blur md:flex">
-        {navItems?.map(({ link }, i) => {
+        {navItems?.map(({ link }) => {
           const href =
             link.type === 'reference' &&
             typeof link.reference?.value === 'object' &&
@@ -96,7 +96,7 @@ function DesktopNavigation({ navItems }: { navItems: Header['navItems'] }) {
             href === '/' ? pathname === href : href && pathname?.startsWith(href)
 
           return (
-            <li key={i}>
+            <li key={href}>
               <CMSLink
                 className={cn(
                   'relative block px-3 py-2 transition hover:text-primary',
