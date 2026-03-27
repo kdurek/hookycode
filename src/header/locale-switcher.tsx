@@ -166,8 +166,8 @@ export const LocaleSwitcher = () => {
         fetchPriority="low"
         decoding="async"
         src={`/${otherLocale}.svg`}
-        width={0}
-        height={0}
+        width={20}
+        height={20}
         className="size-5"
       />
     </Button>

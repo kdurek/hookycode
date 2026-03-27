@@ -21,7 +21,7 @@ export const Logo = (props: Props) => {
       fetchPriority={priority}
       decoding="async"
       className={className}
-      src="/logo.png"
+      src="/logo.webp"
       sizes={sizes}
     />
   )

@@ -51,6 +51,7 @@ export const ExperienceBlock: React.FC<ExperienceBlockProps & { enableGutter?: b
                     resource={item.logo}
                     alt={item.company}
                     imgClassName="size-7 rounded-full object-cover"
+                    size="40px"
                   />
                 </Link>
                 <dl className="flex flex-auto flex-wrap gap-x-2">

@@ -89,12 +89,14 @@ export function ProjectThumbnailMedia({
   priority,
   className,
   videoClassName,
+  size,
 }: {
   thumbnail: Project['thumbnail']
   video: Project['video']
   priority?: boolean
   className?: string
   videoClassName?: string
+  size?: string
 }) {
   const ctx = useContext(VideoHoverContext)
   if (!ctx) throw new Error('ProjectThumbnailMedia must be used inside ProjectThumbnail')
@@ -106,6 +108,7 @@ export function ProjectThumbnailMedia({
         htmlElement={null}
         resource={thumbnail}
         priority={priority}
+        size={size}
         imgClassName="absolute inset-0 h-full w-full object-cover"
       />
       <div ref={videoContainerRef} className="absolute inset-0 opacity-0" onTransitionEnd={onTransitionEnd}>

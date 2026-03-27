@@ -21,6 +21,7 @@ export function ProjectShowcase({ docs }: { docs: Project[] }) {
               thumbnail={project.thumbnail}
               video={project.video}
               className="absolute inset-0 rounded-none"
+              size="(max-width: 640px) 176px, 288px"
             />
             <Link href="/projects" className="absolute inset-0 pointer-coarse:pointer-events-none" />
           </ProjectThumbnail>

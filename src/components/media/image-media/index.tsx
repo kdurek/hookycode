@@ -6,10 +6,7 @@ import React from 'react'
 
 import type { Props as MediaProps } from '../types'
 
-import { cssVariables } from '@/css-variables'
 import { getMediaUrl } from '@/utilities/get-media-url'
-
-const { breakpoints } = cssVariables
 
 /**
  * ImageMedia
@@ -72,12 +69,9 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
 
   const loading = loadingFromProps || (!priority ? 'lazy' : undefined)
 
-  // NOTE: this is used by the browser to determine which image to download at different screen sizes
-  const sizes = sizeFromProps
-    ? sizeFromProps
-    : Object.entries(breakpoints)
-        .map(([, value]) => `(max-width: ${value}px) ${value * 2}w`)
-        .join(', ')
+  // NOTE: this is used by the browser to determine which image to download at different screen sizes.
+  // Callers should pass a specific `size` prop for images that are not full-width (e.g. grid items).
+  const sizes = sizeFromProps || '100vw'
 
   return (
     <picture className={cn(pictureClassName)}>
@@ -87,7 +81,6 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         fill={fill}
         height={!fill ? height : undefined}
         priority={priority}
-        quality={100}
         loading={loading}
         sizes={sizes}
         src={src}

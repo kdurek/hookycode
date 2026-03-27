@@ -22,6 +22,7 @@ export const ProjectCard: React.FC<{
           priority={priority}
           className="z-10 aspect-video rounded-md"
           videoClassName="mask-[radial-gradient(white,black)]"
+          size="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
       <h2 className="mt-6">
