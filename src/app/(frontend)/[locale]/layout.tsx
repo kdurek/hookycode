@@ -46,13 +46,6 @@ export default async function RootLayout({
 
   return (
     <html className={geist.className} lang={locale} suppressHydrationWarning>
-      <head>
-        <Script
-          defer
-          src={process.env.NEXT_PUBLIC_UMAMI_URL}
-          data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
-        />
-      </head>
       <body>
         <NextIntlClientProvider>
           <CookieConsentProvider>
@@ -60,6 +53,11 @@ export default async function RootLayout({
             <Header locale={locale} />
             {children}
             <Footer locale={locale} />
+            <Script
+              src={process.env.NEXT_PUBLIC_UMAMI_URL}
+              data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
+              strategy="afterInteractive"
+            />
           </CookieConsentProvider>
         </NextIntlClientProvider>
       </body>
