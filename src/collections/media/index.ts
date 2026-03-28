@@ -6,6 +6,8 @@ import { fileURLToPath } from 'url'
 import { anyone } from '@/access/anyone'
 import { authenticated } from '@/access/authenticated'
 
+import { generateBlurDataURL } from './hooks/generate-blur-data-url'
+
 const generateImageName: GenerateImageName = ({ originalName, sizeName, extension }) => {
   return `${originalName}-${sizeName}.${extension}`
 }
@@ -27,10 +29,21 @@ export const Media: CollectionConfig = {
       type: 'text',
       //required: true,
     },
+    {
+      name: 'blurDataURL',
+      type: 'text',
+      admin: {
+        hidden: true,
+        readOnly: true,
+      },
+    },
   ],
+  hooks: {
+    afterChange: [generateBlurDataURL],
+  },
   upload: {
     // Upload to the public/media directory in Next.js making them publicly accessible even outside of Payload
-    staticDir: path.resolve(dirname, '../../public/media'),
+    staticDir: path.resolve(dirname, '../../../public/media'),
     mimeTypes: ['image/*', 'video/*'],
     resizeOptions: {
       width: 2048,

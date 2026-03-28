@@ -54,13 +54,21 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
   let height: number | undefined
   let alt = altFromProps
   let src: StaticImageData | string = srcFromProps || ''
+  let blurDataURL: string | null | undefined
 
   if (!src && resource && typeof resource === 'object') {
-    const { alt: altFromResource, height: fullHeight, url, width: fullWidth } = resource
+    const {
+      alt: altFromResource,
+      blurDataURL: blurFromResource,
+      height: fullHeight,
+      url,
+      width: fullWidth,
+    } = resource
 
     width = fullWidth!
     height = fullHeight!
     alt = altFromResource || ''
+    blurDataURL = blurFromResource
 
     const cacheTag = resource.updatedAt
 
@@ -80,6 +88,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         className={cn(imgClassName)}
         fill={fill}
         height={!fill ? height : undefined}
+        {...(blurDataURL ? { placeholder: 'blur', blurDataURL } : {})}
         priority={priority}
         loading={loading}
         sizes={sizes}
