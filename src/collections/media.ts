@@ -33,18 +33,19 @@ export const Media: CollectionConfig = {
     staticDir: path.resolve(dirname, '../../public/media'),
     mimeTypes: ['image/*', 'video/*'],
     resizeOptions: {
-      width: 1920,
+      width: 2048,
+      fit: 'inside',
       withoutEnlargement: true,
     },
     formatOptions: {
       format: 'webp',
     },
     adminThumbnail: 'thumbnail',
-    focalPoint: true,
     imageSizes: [
       {
         name: 'thumbnail',
         width: 300,
+        withoutEnlargement: true,
         formatOptions: {
           format: 'webp',
         },
@@ -54,7 +55,6 @@ export const Media: CollectionConfig = {
         name: 'og',
         width: 1200,
         height: 630,
-        crop: 'center',
         formatOptions: {
           format: 'webp',
         },

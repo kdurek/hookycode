@@ -15,7 +15,7 @@ const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://loc
 const nextConfig: NextConfig = {
   output: 'standalone',
   images: {
-    qualities: [75],
+    qualities: [100],
     localPatterns: [
       {
         pathname: '/api/media/file/**',
