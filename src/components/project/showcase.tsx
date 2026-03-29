@@ -3,7 +3,7 @@ import { Project } from '@/payload-types'
 import { Link } from '@/i18n/navigation'
 import { ProjectThumbnail, ProjectThumbnailMedia } from '@/components/project/thumbnail'
 
-const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+const rotations = ['rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2']
 
 export function ProjectShowcase({ docs }: { docs: Project[] }) {
   return (
@@ -23,7 +23,10 @@ export function ProjectShowcase({ docs }: { docs: Project[] }) {
               className="absolute inset-0 rounded-none"
               size="(max-width: 640px) 176px, 288px"
             />
-            <Link href="/projects" className="absolute inset-0 pointer-coarse:pointer-events-none" />
+            <Link
+              href="/projects"
+              className="absolute inset-0 pointer-coarse:pointer-events-none"
+            />
           </ProjectThumbnail>
         ))}
       </div>
