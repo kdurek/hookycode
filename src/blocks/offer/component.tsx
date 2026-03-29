@@ -12,7 +12,7 @@ export const OfferBlock: React.FC<OfferBlockProps & { enableGutter?: boolean }> 
   const { title, items, link, enableGutter } = props
 
   return (
-    <div className={cn(enableGutter && 'container mt-24 md:mt-28')}>
+    <div className={cn(enableGutter && 'container mt-16 sm:mt-20')}>
       <BlockHeader title={title} />
       <ol
         className={cn(
