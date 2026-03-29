@@ -54,11 +54,7 @@ export default async function Project({ params: paramsPromise }: Args) {
 
   return (
     <article>
-      <RenderHero
-        type="base"
-        title={project.title}
-        description={project.description}
-      />
+      <RenderHero type="base" title={project.title} description={project.description} />
 
       <section className="container mt-16 sm:mt-20">
         <ProjectTemplate project={project} />
@@ -73,7 +69,11 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
   const decodedSlug = decodeURIComponent(slug)
   const project = await queryCachedProjectBySlug({ slug: decodedSlug, locale })()
 
-  return generateMeta({ doc: project, locale })
+  return generateMeta({
+    doc: project,
+    locale,
+    route: { pathname: '/projects', suffix: `/${decodedSlug}` },
+  })
 }
 
 const queryProjectBySlug = async ({ slug, locale }: { slug: string; locale: TypedLocale }) => {

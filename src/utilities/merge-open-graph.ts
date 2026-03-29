@@ -7,6 +7,8 @@ const defaultOpenGraph: Metadata['openGraph'] = {
   images: [
     {
       url: `${getServerSideURL()}/hookycode-OG.png`,
+      width: 1200,
+      height: 630,
     },
   ],
   siteName: 'Hooky Code',

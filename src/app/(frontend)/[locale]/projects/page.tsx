@@ -7,6 +7,7 @@ import { ProjectList } from '@/components/project/list'
 import { getCachedProjects } from '@/utilities/get-projects'
 import { getTranslations } from 'next-intl/server'
 import { RenderHero } from '@/heros/render-hero'
+import { generateMeta } from '@/utilities/generate-meta'
 
 export const dynamic = 'force-static'
 
@@ -19,11 +20,7 @@ export default async function Page({ params }: { params: Promise<{ locale: Typed
 
   return (
     <article>
-      <RenderHero
-        type="base"
-        title={t('projects.title')}
-        description={t('projects.description')}
-      />
+      <RenderHero type="base" title={t('projects.title')} description={t('projects.description')} />
 
       <section className="container mt-16 sm:mt-20">
         <ProjectList docs={projects.docs} />
@@ -45,7 +42,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale })
-  return {
-    title: `${t('projects.title')} - ${t('seo.title')}`,
-  }
+
+  return generateMeta({
+    locale,
+    route: { pathname: '/projects' },
+    pageTitle: t('projects.title'),
+    description: t('projects.description'),
+  })
 }

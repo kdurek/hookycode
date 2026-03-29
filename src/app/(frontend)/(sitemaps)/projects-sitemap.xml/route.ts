@@ -3,13 +3,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
 import { routing } from '@/i18n/routing'
-import {
-  SITE_URL,
-  getLocalePrefix,
-  getLocalizedPath,
-  getLocalizedSlugs,
-  buildAlternateRefs,
-} from '../sitemap-utils'
+import { getLocalizedSlugs, buildRouteUrl, buildAlternateRefs } from '../sitemap-utils'
 
 const getProjectsSitemap = unstable_cache(
   async () => {
@@ -29,40 +23,27 @@ const getProjectsSitemap = unstable_cache(
     const dateFallback = new Date().toISOString()
     const latestDate = docs[0]?.updatedAt || dateFallback
 
-    const buildArchiveUrl = (locale: string) => {
-      const prefix = getLocalePrefix(locale)
-      const path = getLocalizedPath('/projects', locale)
-      return `${SITE_URL}${prefix}${path}`
-    }
-
     const archiveEntry = {
-      loc: buildArchiveUrl(routing.defaultLocale),
+      loc: buildRouteUrl(routing.defaultLocale, '/projects'),
       lastmod: latestDate,
-      alternateRefs: buildAlternateRefs(buildArchiveUrl),
+      alternateRefs: buildAlternateRefs((l) => buildRouteUrl(l, '/projects')),
     }
 
-    const projectEntries = docs
-      .filter((project) => {
-        const slugs = getLocalizedSlugs(project.slug)
-        return Boolean(slugs[routing.defaultLocale])
-      })
-      .map((project) => {
-        const slugs = getLocalizedSlugs(project.slug)
-        const defaultSlug = slugs[routing.defaultLocale]
+    const projectEntries = docs.flatMap((project) => {
+      const slugs = getLocalizedSlugs(project.slug)
+      const defaultSlug = slugs[routing.defaultLocale]
+      if (!defaultSlug) return []
 
-        const buildProjectUrl = (locale: string) => {
-          const prefix = getLocalePrefix(locale)
-          const path = getLocalizedPath('/projects', locale)
-          const slug = slugs[locale] || defaultSlug
-          return `${SITE_URL}${prefix}${path}/${slug}`
-        }
-
-        return {
-          loc: buildProjectUrl(routing.defaultLocale),
+      return [
+        {
+          loc: buildRouteUrl(routing.defaultLocale, '/projects', `/${defaultSlug}`),
           lastmod: project.updatedAt || dateFallback,
-          alternateRefs: buildAlternateRefs(buildProjectUrl),
-        }
-      })
+          alternateRefs: buildAlternateRefs((l) =>
+            buildRouteUrl(l, '/projects', `/${slugs[l] || defaultSlug}`),
+          ),
+        },
+      ]
+    })
 
     return [archiveEntry, ...projectEntries]
   },

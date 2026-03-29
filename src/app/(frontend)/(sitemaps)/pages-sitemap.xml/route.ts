@@ -21,28 +21,25 @@ const getPagesSitemap = unstable_cache(
 
     const dateFallback = new Date().toISOString()
 
-    return docs
-      .filter((page) => {
-        const slugs = getLocalizedSlugs(page.slug)
-        return Boolean(slugs[routing.defaultLocale])
-      })
-      .map((page) => {
-        const slugs = getLocalizedSlugs(page.slug)
-        const defaultSlug = slugs[routing.defaultLocale]
+    return docs.flatMap((page) => {
+      const slugs = getLocalizedSlugs(page.slug)
+      const defaultSlug = slugs[routing.defaultLocale]
+      if (!defaultSlug) return []
 
-        const buildPageUrl = (locale: string) => {
-          const slug = slugs[locale] || defaultSlug
-          const prefix = getLocalePrefix(locale)
-          const path = slug === 'home' ? '' : `/${slug}`
-          return `${SITE_URL}${prefix}${path}` || `${SITE_URL}${prefix}/`
-        }
+      const buildPageUrl = (locale: string) => {
+        const slug = slugs[locale] || defaultSlug
+        const path = slug === 'home' ? '' : `/${slug}`
+        return `${SITE_URL}${getLocalePrefix(locale)}${path}`
+      }
 
-        return {
+      return [
+        {
           loc: buildPageUrl(routing.defaultLocale),
           lastmod: page.updatedAt || dateFallback,
           alternateRefs: buildAlternateRefs(buildPageUrl),
-        }
-      })
+        },
+      ]
+    })
   },
   ['pages-sitemap'],
   { tags: ['pages'] },

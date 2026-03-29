@@ -80,7 +80,11 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
     locale,
   })()
 
-  return generateMeta({ doc: page, locale })
+  return generateMeta({
+    doc: page,
+    locale,
+    route: { suffix: decodedSlug === 'home' ? '' : `/${decodedSlug}` },
+  })
 }
 
 const queryPageBySlug = async ({ slug, locale }: { slug: string; locale: TypedLocale }) => {
