@@ -3,7 +3,6 @@ import type { Metadata } from 'next/types'
 import { Pagination } from '@/components/pagination'
 import configPromise from '@payload-config'
 import { getPayload, type TypedLocale } from 'payload'
-import React from 'react'
 import { notFound } from 'next/navigation'
 import { ProjectList } from '@/components/project/list'
 import { getCachedProjects } from '@/utilities/get-projects'
@@ -32,11 +31,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   return (
     <article>
-      <RenderHero
-        type="base"
-        title={t('projects.title')}
-        description={t('projects.description')}
-      />
+      <RenderHero type="base" title={t('projects.title')} description={t('projects.description')} />
 
       <section className="container mt-16 sm:mt-20">
         <ProjectList docs={projects.docs} />

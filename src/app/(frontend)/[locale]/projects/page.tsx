@@ -2,7 +2,6 @@ import type { Metadata } from 'next/types'
 
 import { Pagination } from '@/components/pagination'
 import type { TypedLocale } from 'payload'
-import React from 'react'
 import { ProjectList } from '@/components/project/list'
 import { getCachedProjects } from '@/utilities/get-projects'
 import { getTranslations } from 'next-intl/server'

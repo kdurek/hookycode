@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import configPromise from '@payload-config'
 import { getPayload, type TypedLocale } from 'payload'
-import React from 'react'
 
 import type { Project } from '@/payload-types'
 import { generateMeta } from '@/utilities/generate-meta'

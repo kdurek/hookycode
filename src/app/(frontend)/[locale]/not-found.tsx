@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/utilities/ui'

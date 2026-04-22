@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import configPromise from '@payload-config'
 import { getPayload, type TypedLocale } from 'payload'
-import React from 'react'
 
 import { RenderBlocks } from '@/blocks/render-blocks'
 import { RenderHero } from '@/heros/render-hero'
