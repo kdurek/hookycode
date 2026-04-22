@@ -53,11 +53,24 @@ export default async function RootLayout({
             <Header locale={locale} />
             {children}
             <Footer locale={locale} />
-            <Script
-              src={process.env.NEXT_PUBLIC_UMAMI_URL}
-              data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
-              strategy="afterInteractive"
-            />
+            {process.env.NEXT_PUBLIC_UMAMI_URL && process.env.NEXT_PUBLIC_UMAMI_ID && (
+              <Script
+                strategy="afterInteractive"
+                src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
+                data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
+                data-performance="true"
+              />
+            )}
+            {process.env.NEXT_PUBLIC_UMAMI_URL && process.env.NEXT_PUBLIC_UMAMI_ID && (
+              <Script
+                strategy="afterInteractive"
+                src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/recorder.js`}
+                data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
+                data-sample-rate="1"
+                data-mask-level="moderate"
+                data-max-duration="300000"
+              />
+            )}
           </CookieConsentProvider>
         </NextIntlClientProvider>
       </body>
