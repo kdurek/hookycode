@@ -1,16 +1,10 @@
 import type { Block, Field } from 'payload'
 
-import {
-  BlocksFeature,
-  FixedToolbarFeature,
-  HeadingFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
+import { BlocksFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
-import { link } from '@/fields/link'
-import { MediaBlock } from '@/blocks/media-block/config'
 import { CallToAction } from '@/blocks/call-to-action/config'
+import { MediaBlock } from '@/blocks/media-block/config'
+import { link } from '@/fields/link'
 
 const columnFields: Field[] = [
   {
@@ -45,8 +39,6 @@ const columnFields: Field[] = [
           ...rootFeatures,
           HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
           BlocksFeature({ blocks: [MediaBlock, CallToAction] }),
-          FixedToolbarFeature(),
-          InlineToolbarFeature(),
         ]
       },
     }),
