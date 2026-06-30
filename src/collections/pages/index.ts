@@ -24,7 +24,7 @@ import { Offer } from '@/blocks/offer/config'
 import { Uses } from '@/blocks/uses/config'
 import { Experience } from '@/blocks/experience/config'
 
-export const Pages: CollectionConfig<'pages'> = {
+export const Pages: CollectionConfig = {
   slug: 'pages',
   access: {
     create: authenticated,
@@ -34,7 +34,10 @@ export const Pages: CollectionConfig<'pages'> = {
   },
   // This config controls what's populated by default when a page is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
-  // Type safe if the collection slug generic is passed to `CollectionConfig` - `CollectionConfig<'pages'>
+  // NOTE: the slug generic (CollectionConfig<'pages'>) is dropped to work around a TypeScript 6
+  // regression where a slug-typed config's defaultPopulate is not assignable to buildConfig's
+  // collections array. defaultPopulate falls back to SelectType (keys no longer field-checked);
+  // restore the generic once the core types are fixed.
   defaultPopulate: {
     title: true,
     slug: true,
